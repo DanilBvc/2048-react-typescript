@@ -1,0 +1,20 @@
+.Board {
+    display: grid;
+    grid-template-columns: repeat(4,40px);
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+}
+.row {
+    display: grid;
+    grid-template-rows: repeat(4, 40px);
+}
+.column {
+background-color: orangered;
+height: 40px;
+width: 40px;
+display: flex;
+align-items: center;
+justify-content: center;
+border: 1px solid black;
+}
