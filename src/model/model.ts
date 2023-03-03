@@ -35,7 +35,12 @@ const hasValue: BoardProps = (board, number) => {
   return false;
 };
 
-export const victory: BoardProps = (board, number) => {
+export const victory = (board:  [
+  [number, number, number, number],
+  [number, number, number, number],
+  [number, number, number, number],
+  [number, number, number, number]
+]) => {
   return hasValue(board, 2048);
 };
 
@@ -73,13 +78,13 @@ export const moveAddNumber = (
   ]
 ) => {
   if (isFull(board)) {
-    return board
-  } 
-  let [row, column] = createRandomRowColumn()
-  while(board[row][column] !== 0) {
-    [row, column] = createRandomRowColumn()
+    return board;
   }
-  board[row][column] = 2
+  let [row, column] = createRandomRowColumn();
+  while (board[row][column] !== 0) {
+    [row, column] = createRandomRowColumn();
+  }
+  board[row][column] = 2;
   return board;
 };
 
@@ -189,8 +194,6 @@ export const moveRight = (
     [number, number, number, number]
   ]
 ) => {
- 
-
   const newBoard = rotateRight(board);
   const newBoard1 = moveLeft(newBoard);
   return rotateLeft(newBoard1);
@@ -204,9 +207,9 @@ export const moveDown = (
     [number, number, number, number]
   ]
 ) => {
-    const newBoard = reverse(board);
-    const newBoard1 = moveLeft(newBoard);
-    return reverse(newBoard1);
+  const newBoard = reverse(board);
+  const newBoard1 = moveLeft(newBoard);
+  return reverse(newBoard1);
 };
 export const moveUp = (
   board: [
@@ -220,3 +223,5 @@ export const moveUp = (
   const newBoard1 = moveLeft(newBoard);
   return rotateRight(newBoard1);
 };
+
+

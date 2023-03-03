@@ -6,21 +6,38 @@ import {
   moveRight,
   moveDown,
   moveUp,
+  victory,
 } from './model/model';
 import './styles/style.css';
 function App() {
   const [board, setBoard] = React.useState(getRandomBoard());
   const left = () => {
-    setBoard(moveAddNumber(moveLeft(board)));
+    if (victory(board)) {
+      alert('victory');
+    } else {
+      setBoard(moveAddNumber(moveLeft(board)));
+    }
   };
   const right = () => {
-    setBoard(moveAddNumber(moveRight(board)));
+    if (victory(board)) {
+      alert('victory');
+    } else {
+      setBoard(moveAddNumber(moveRight(board)));
+    }
   };
   const up = () => {
-    setBoard(moveAddNumber(moveUp(board)));
+    if (victory(board)) {
+      alert('victory');
+    } else {
+      setBoard(moveAddNumber(moveUp(board)));
+    }
   };
   const down = () => {
-    setBoard(moveAddNumber(moveDown(board)));
+    if (victory(board)) {
+      alert('victory');
+    } else {
+      setBoard(moveAddNumber(moveDown(board)));
+    }
   };
   return (
     <>
